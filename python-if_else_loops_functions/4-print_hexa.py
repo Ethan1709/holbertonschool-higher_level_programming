@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 for i in range(0, 99):
-    print(format(i) + " " + "=" + " " +  "0" + "x" + format(i, '0x'))
+    print(format(i) + " " + "=" + " " + "0" + "x" + format(i, '0x'))
 
