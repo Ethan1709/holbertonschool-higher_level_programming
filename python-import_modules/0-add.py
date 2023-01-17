@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def add(a, b):
-    print("{} + {} = {add_0}".format(a, b, add_0))
+import add_0
+print(add_0.add(1, 2))
