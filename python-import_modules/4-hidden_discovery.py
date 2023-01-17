@@ -1,3 +1,7 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    print("Unkonw magic number is 2645 in hidden_s.pyc")
+import hidden_4
+
+if __name__ == '__main__':
+    for name in dir(hidden_4):
+        if name[:2] != "__":
+            print(name)
