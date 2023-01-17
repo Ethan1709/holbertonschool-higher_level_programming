@@ -1,5 +1,3 @@
 #!/usr/bin/python3
 def add(a, b):
-    a = 1
-    b = 2
-    import add_0
+    print("{} + {} = {add_0}".format(a, b, add_0))
