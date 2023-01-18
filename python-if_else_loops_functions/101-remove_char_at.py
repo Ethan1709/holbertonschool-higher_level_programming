@@ -2,7 +2,8 @@
 def remove_char_at(str, n):
     for i in range(len(str)):
         if i == n:
-            print(" ", end="")
+            continue
         else:
-            print(str[i], end="")
-    return (" ")
+            y = (str[i])
+            print(y, end="")
+    return("")
