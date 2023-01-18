@@ -10,7 +10,7 @@ if __name__ == "__main__":
     c = sys.argv[2]
     a = sys.argv[1]
     b = sys.argv[3]
-    if i > 3:
+    if i != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     if c not in ('+', '-', '*', '/'):
