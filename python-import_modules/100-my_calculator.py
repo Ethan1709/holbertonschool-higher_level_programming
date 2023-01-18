@@ -5,14 +5,13 @@ if __name__ == "__main__":
     
     for i in range(0, len(sys.argv)):
         i += 1
-    i = i - 1
-    
+
+    if i != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
     c = sys.argv[2]
     a = sys.argv[1]
     b = sys.argv[3]
-    if i != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
     if c not in ('+', '-', '*', '/'):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
