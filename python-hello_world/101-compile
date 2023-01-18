@@ -1,0 +1,4 @@
+#!/bin/bash
+python3 $PYFILE
+
+import py_compile
