@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     import sys
     from calculator_1 import add, sub, mul, div
-    
+
     for i in range(0, len(sys.argv)):
         i += 1
 
