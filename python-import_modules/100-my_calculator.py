@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import sys
-    from calculator_1 import add, sub, mul, div
+import sys
+from calculator_1 import add, sub, mul, div
 
+if __name__ == "__main__":
     for i in range(0, len(sys.argv)):
         i += 1
 
