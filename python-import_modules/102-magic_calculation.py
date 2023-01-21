@@ -7,7 +7,7 @@ def magic_calculation(a, b):
     if a < b:
         return
     c = add(a, b)
-    while (i < 90):
-        for i in range(4, 6):
-            add(c ,i)
-        sub(a, b)
+    for i in range(4, 6):
+            c = add(c ,i)
+    return sub(a, b)
+dis.dis(magic_calculation)
