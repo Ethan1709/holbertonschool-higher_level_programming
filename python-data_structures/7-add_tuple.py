@@ -25,7 +25,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if j == 0:
         list_b += [0, 0]
 
-
     z = zip(list_a, list_b)
     sum = [x + y for (x, y) in z]
     sum = tuple(sum)
