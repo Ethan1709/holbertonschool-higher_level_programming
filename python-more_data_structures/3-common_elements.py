@@ -6,4 +6,4 @@ def common_elements(set_1, set_2):
     b = set(set_2)
     if (a & b):
         return (a & b)
-    return
+    return []
