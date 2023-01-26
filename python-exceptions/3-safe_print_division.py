@@ -8,4 +8,4 @@ def safe_print_division(a, b):
         if b == 0:
             print("Inside result: " + str(None))
         else:
-            print("Inside result: " + str(a / b))
+            print("Inside result: " + "{}".format(a / b))
