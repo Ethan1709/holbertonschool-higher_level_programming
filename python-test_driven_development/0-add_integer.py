@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""" add two integers """
+
+
 def add_integer(a, b=98):
+    """ add two integers """
     try:
         if type(a) is float:
             a = int(a)
