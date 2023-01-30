@@ -5,6 +5,6 @@
 class Square:
     """ Square """
     def __init__(self, name):
-        self._Square_size = name
+        self._Square__size = name
 
 p = Square('size')
