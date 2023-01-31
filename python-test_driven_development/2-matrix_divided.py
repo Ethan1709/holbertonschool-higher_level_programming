@@ -7,7 +7,8 @@ def matrix_divided(matrix, div):
     new = []
     rounded = []
     if matrix is None or div is None:
-        raise TypeError("matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'")
+        raise TypeError("matrix_divided() missing 2 required \
+                positional arguments: 'matrix' and 'div'")
     for row in matrix:
         for j in row:
             if not isinstance(j, int) and not isinstance(j, float):
