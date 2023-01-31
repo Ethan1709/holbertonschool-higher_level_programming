@@ -2,20 +2,17 @@
 def matrix_divided(matrix, div):
     new = []
     rounded = []
-    """ verifions si matrix est un eliste """
-    """" verfions la row de chaque matrix ca doit etre meme size"""
-    """ si la matrix est a une seule dimension faire le calcul """
     for row in matrix:
         for j in row:
             if not isinstance(j, int) and not isinstance(j, float):
                 raise TypeError("matrix must be a matrix (list of lists)\
  of integers/floats")
-
     if len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
-    if len(matrix[0]) != len(matrix[1]) and len(matrix[1]) != 0:
-        raise TypeError('Each row of the matrix must have the same size')
+    if len(matrix[1]) != 0:
+        if len(matrix[0]) != len(matrix[1]):
+            raise TypeError('Each row of the matrix must have the same size')
     if div == 0:
         raise ZeroDivisionError('division by zero')
     if type(div) is not int and type(div) is not float:
