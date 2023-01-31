@@ -17,6 +17,8 @@ integers/floats")
         raise ZeroDivisionError('division by zero')
     if type(div) is not int and type(div) is not float:
         raise TypeError('div must be a number')
+    if len(matrix[1]) == 0:
+        return [[round(x/div, 2) for x in row] for row in (matrix)]
     for i in range(len(matrix)):
         new.append(list(map(lambda x: x / div, matrix[i])))
     rounded = [[round(x, 2) for x in row] for row in new]
