@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ div matrix """
+
+
 def matrix_divided(matrix, div):
     """ div matrix """
     new = []
