@@ -14,7 +14,7 @@ integers/floats")
         raise ZeroDivisionError('division by zero')
     if type(div) is not int and type(div) is not float:
         raise TypeError('div must be a number')
-    if not matrix[1]:
+    if len(matrix[1]) == 0:
         return [[round(x/div, 2) for x in row] for row in (matrix)]
     if len(matrix[0]) != len(matrix[1]):
         raise TypeError('Each row of the matrix must have the same size')
