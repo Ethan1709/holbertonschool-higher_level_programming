@@ -6,6 +6,8 @@ def matrix_divided(matrix, div):
     """ div matrix """
     new = []
     rounded = []
+    if div == float('inf'):
+        raise TypeError('div must be a number')
     if matrix is None or div is None:
         raise TypeError("matrix_divided() missing 2 required \
                 positional arguments: 'matrix' and 'div'")
