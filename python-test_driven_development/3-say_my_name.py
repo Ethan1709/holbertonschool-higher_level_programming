@@ -4,7 +4,7 @@
 
 def say_my_name(first_name, last_name=""):
     """ print name """
-    if first_name == None and last_name == None:
+    if first_name is None and last_name is None:
         raise TypeError("say_my_name() missing 2 required positional arguments:\
                 'first_name' and 'last_name'")
     if type(first_name) is not str:
