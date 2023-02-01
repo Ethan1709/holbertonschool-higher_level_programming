@@ -2,7 +2,6 @@
 """ text indentation """
 
 
-
 def text_indentation(text):
     """ text indentation """
     if type(text) is not str:
