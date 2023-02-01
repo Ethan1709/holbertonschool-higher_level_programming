@@ -23,9 +23,10 @@ integers/floats")
         raise ZeroDivisionError('division by zero')
     if type(div) is not int and type(div) is not float:
         raise TypeError('div must be a number')
-    if len(matrix[1]) != 0:
-        if len(matrix[0]) != len(matrix[1]):
-            raise TypeError('Each row of the matrix must have the same size')
+    length = len(matrix[0])
+    for row in matrix:
+        if len(row) != length:
+            raise TypeError("Each row of the matrix must have the same size")
     for i in range(len(matrix)):
         new.append(list(map(lambda x: x / div, matrix[i])))
     rounded = [[round(x, 2) for x in row] for row in new]
