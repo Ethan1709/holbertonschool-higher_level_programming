@@ -53,7 +53,7 @@ class Rectangle():
 
     def __str__(self):
         if self.width == 0 or self.height == 0:
-            print("")
+            return ""
         else:
             Rectangle = ""
             for k in range(0, self.height):
