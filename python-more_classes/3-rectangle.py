@@ -60,4 +60,4 @@ class Rectangle():
                 for j in range(0, self.width):
                     Rectangle += "#"
                 Rectangle += "\n"
-            return Rectangle
+        return Rectangle
