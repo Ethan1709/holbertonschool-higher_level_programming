@@ -56,14 +56,13 @@ class Square:
         square = ""
         if self.size == 0:
             square = ""
-        for i in range(self.position[1]):
-            square += ('\n')
-        for i in range(0, self.size):
-            for j in range(self.position[0]):
-                square += " "
-            for n in range(0, self.size):
-                square += "#"
-            square += ('\n')
+        else:
+            for i in range(self.position[1]):
+                square += ('\n')
+            for i in range(0, self.size):
+                for j in range(self.position[0]):
+                    square += " "
+                for n in range(0, self.size):
+                    square += "#"
+                square += ('\n')
         return square[:-1]
-
-        
