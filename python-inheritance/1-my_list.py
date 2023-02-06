@@ -4,5 +4,8 @@
 
 class MyList(list):
     """ inherit """
+    def __init__(self):
+        super().__init__()
+
     def print_sorted(self):
-        print(MyList)
+        print(sorted(self))
