@@ -1,0 +1,4 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> print_sorted():
+TypeError: list must be a list of integer
