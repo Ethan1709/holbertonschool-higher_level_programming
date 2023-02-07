@@ -44,4 +44,4 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 Exception: area() is not implemented
 
->>> bg.integer_validator("name", True)
+>>> bg.integer_validator("age", True)
