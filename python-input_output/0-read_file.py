@@ -6,5 +6,5 @@ def read_file(filename=""):
     """ read """
     with open(filename, encoding="utf-8") as f:
         if filename == "":
-            return
-        print(f.read()[:-1])
+            pass
+        print (f.read()[:-1])
