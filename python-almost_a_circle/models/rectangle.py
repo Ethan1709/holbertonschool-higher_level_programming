@@ -85,7 +85,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ args and kwargs """
-        if args :
+        if args:
             for i in range(len(args)):
                 if i == 0:
                     self.id = args[i]
