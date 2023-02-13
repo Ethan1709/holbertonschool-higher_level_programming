@@ -72,6 +72,6 @@ class Rectangle(Base):
             print("")
 
     def __str__(self):
-        """ return str representation """
+        """ str representation """
         return "[Rectangle] ({}) {}/{} - {}/{}".forma\
                 t(self.id, self.__x, self.__y, self.__width, self.__height)
