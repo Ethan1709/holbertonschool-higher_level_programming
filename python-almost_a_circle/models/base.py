@@ -58,6 +58,6 @@ class Base:
                 text = file.read()
         except:
             text = None
-        
+
         data = cls.from_json_string(text)
         return [cls.create(**v) for v in data]
