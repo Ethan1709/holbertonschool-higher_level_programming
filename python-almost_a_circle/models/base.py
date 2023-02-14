@@ -18,5 +18,4 @@ class Base:
         """ dict to json string """
         if list_dictionaries is None or list_dictionaries == "":
             return json.dumps([])
-
         return json.dumps(list_dictionaries)
