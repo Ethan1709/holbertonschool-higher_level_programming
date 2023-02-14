@@ -30,9 +30,10 @@ class Base:
 
         with open("%s.json" % (cls.__name__), 'w') as f:
             f.write(cls.to_json_string(l))
-    
+
     @staticmethod
     def from_json_string(json_string):
+        a = []
         if json_string is None or json_string == "":
-            return json.loads([])
+            return json.loads(a)
         return json.loads(json_string)
