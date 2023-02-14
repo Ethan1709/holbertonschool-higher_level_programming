@@ -42,8 +42,10 @@ class Base:
     def create(cls, **dictionary):
         """  returns an instance with all attributes already set """
         if 'rectangle' in cls.__name__.lower():
-            r = cls(1, 1)
+            r = cls(3, 3)
         else:
-            r = cls(1)
-        r.update(dictionary)
+            r = cls(3)
+
+        r.update(**dictionary)
+
         return r
