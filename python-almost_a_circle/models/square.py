@@ -18,5 +18,6 @@ class Square(Rectangle):
         return self.width
 
     @size.setter
-    def size(self, value):
-        super(Square, self.__class__).width.fset(self, value)
+    def size(self, size):
+        self.width = size
+        self.height = size
