@@ -28,5 +28,5 @@ class Base:
         if list_objs:
             [l.append(v.to_dictionary()) for v in list_objs]
 
-        with open("%s.json" % cls.__name__, 'w') as f:
+        with open("%s.json" % (cls.__name__), 'w') as f:
             f.write(cls.to_json_string(list_objs))
