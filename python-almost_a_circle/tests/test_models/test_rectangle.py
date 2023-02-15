@@ -71,3 +71,17 @@ class Test_Rectangle(unittest.TestCase):
         r = Rectangle(2, 4, 6, 8, 22)
         self.assertEqual(r.to_dictionary(), {'id': 22, 'width': 2, 'height': 4,
                                              'x': 6, 'y': 8})
+
+        r = Rectangle.create(**{'id': 5, 'width': 1, 'height': 3,
+                                             'x': 4, 'y': 5})
+        answer = Rectangle(1, 3, 4, 5, 5)
+        self.assertEqual(str(r), str(answer))
+
+        r = Rectangle.create(**{'id': 89, 'width': 1,
+                                      'height': 2, 'x': 3})
+        answer = Rectangle(1, 2, 3, 0, 89)
+        self.assertEqual(str(r), str(answer))
+
+        r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        answer = Rectangle(1, 2, 0, 0, 89)
+        self.assertEqual(str(r), str(answer))
