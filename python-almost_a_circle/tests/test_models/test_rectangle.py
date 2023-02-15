@@ -5,6 +5,7 @@ from models.rectangle import Rectangle
 from models.base import Base
 
 from io import StringIO
+from contextlib import redirect_stdout
 
 
 class Test_Rectangle(unittest.TestCase):
@@ -43,15 +44,13 @@ class Test_Rectangle(unittest.TestCase):
         ValueError, "width must be > 0", Rectangle, 0, 6, 4, 2, 10)
         self.assertRaisesRegex(
         ValueError, "height must be > 0", Rectangle, 8, 0, 4, 2, 10)
-
-        def test_display(self):
-            """ display """
-            r1 = Rectangle(3, 2)
-            expected_output = '###\n###\n'
-            with StringIO() as buffer, redirect_stdout(buffer):
-                r1.display()
-                result = buffer.getvalue()
-            self.assertEqual(result, expected_output)
+        
+        r1 = Rectangle(3, 2)
+        expected_output = '###\n###\n'
+        with StringIO() as buffer, redirect_stdout(buffer):
+            r1.display()
+            result = buffer.getvalue()
+        self.assertEqual(result, expected_output)
 
         def test_update(self):
             """ update """
