@@ -44,13 +44,20 @@ class Test_Rectangle(unittest.TestCase):
         ValueError, "width must be > 0", Rectangle, 0, 6, 4, 2, 10)
         self.assertRaisesRegex(
         ValueError, "height must be > 0", Rectangle, 8, 0, 4, 2, 10)
-        
+
         r1 = Rectangle(3, 2)
         expected_output = '###\n###\n'
         with StringIO() as buffer, redirect_stdout(buffer):
             r1.display()
             result = buffer.getvalue()
         self.assertEqual(result, expected_output)
+
+        #r1 = Rectangle()
+        #expected_output = ''
+        #with StringIO() as buffer, redirect_stdout(buffer):
+         #   r1.display()
+         #  result = buffer.getvalue()
+        #self.assertEqual(result, expected_output)
 
         r = Rectangle(1, 2, 3, 4)
         r.update(89)
@@ -60,3 +67,7 @@ class Test_Rectangle(unittest.TestCase):
 
         r = Rectangle(14, 16, 12, 15, 25)
         self.assertEqual(str(r), "[Rectangle] (25) 12/15 - 14/16")
+
+        r = Rectangle(2, 4, 6, 8, 22)
+        self.assertEqual(r.to_dictionary(), {'id': 22, 'width': 2, 'height': 4,
+                                             'x': 6, 'y': 8})
