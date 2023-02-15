@@ -12,11 +12,11 @@ class Test_Base(unittest.TestCase):
         b = Base()
         self.assertEqual(b.id, 1)
 
-        b2 = Base()
-        print(b2.id)
+        b = Base(10)
+        self.assertEqual(b.id, 10)
 
-        b3 = Base()
-        print(b3.id)
+        b = Base("hello")
+        self.assertEqual(b.id, "hello")
 
         b4 = Base(12)
         print(b4.id)
