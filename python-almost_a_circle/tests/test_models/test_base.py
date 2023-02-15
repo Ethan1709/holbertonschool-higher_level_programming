@@ -9,8 +9,8 @@ from io import StringIO
 class Test_Base(unittest.TestCase):
     """ unittest """
     def test_init(self):
-        b1 = Base()
-        self.assertEqual(1, 1)
+        b = Base()
+        self.assertEqual(b.id, 1)
 
         b2 = Base()
         print(b2.id)
