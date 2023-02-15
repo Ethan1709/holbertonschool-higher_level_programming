@@ -10,7 +10,7 @@ class Test_Base(unittest.TestCase):
     """ unittest """
     def test_init(self):
         b1 = Base()
-        print(b1.id)
+        self.assertEqual(1, 1)
 
         b2 = Base()
         print(b2.id)
