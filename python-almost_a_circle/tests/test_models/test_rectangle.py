@@ -39,6 +39,10 @@ class Test_Rectangle(unittest.TestCase):
         self.assertRaisesRegex(
         ValueError, "y must be >= 0", Rectangle, 8, 6, 1, -2, 10)
         self.assertRaisesRegex(TypeError, "", Rectangle, )
+        self.assertRaisesRegex(
+        ValueError, "width must be > 0", Rectangle, 0, 6, 4, 2, 10)
+        self.assertRaisesRegex(
+        ValueError, "height must be > 0", Rectangle, 8, 0, 4, 2, 10)
 
         def test_display(self):
             r1 = Rectangle(3, 2)
