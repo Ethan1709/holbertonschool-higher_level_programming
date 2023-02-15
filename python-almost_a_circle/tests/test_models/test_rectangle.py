@@ -85,3 +85,14 @@ class Test_Rectangle(unittest.TestCase):
         r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
         answer = Rectangle(1, 2, 0, 0, 89)
         self.assertEqual(str(r), str(answer))
+
+        to_test = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertEqual(to_test.id, 89)
+        self.assertEqual(to_test.width, 1)
+        self.assertEqual(to_test.x, 0)
+        self.assertEqual(to_test.y, 0)
+
+        to_test = Rectangle.create(**{'id': 89})
+        self.assertEqual(to_test.id, 89)
+        self.assertEqual(to_test.x, 0)
+        self.assertEqual(to_test.y, 0)
