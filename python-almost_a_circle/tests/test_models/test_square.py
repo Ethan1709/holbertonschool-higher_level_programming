@@ -63,3 +63,17 @@ class Test_Square(unittest.TestCase):
         r = Square(2, 6, 8, 22)
         self.assertEqual(r.to_dictionary(), {'id': 22, 'size': 2,
                                              'x': 6, 'y': 8})
+
+        r = Square.create(**{'id': 5, 'width': 1,
+                                             'x': 4, 'y': 5})
+        answer = Square(1, 4, 5, 5)
+        self.assertEqual(str(r), str(answer))
+
+        r = Square.create(**{'id': 89, 'width': 1,
+                                      'x': 3})
+        answer = Square(1, 3, 0, 89)
+        self.assertEqual(str(r), str(answer))
+
+        r = Square.create(**{'id': 89, 'width': 1})
+        answer = Square(1, 0, 0, 89)
+        self.assertEqual(str(r), str(answer))
