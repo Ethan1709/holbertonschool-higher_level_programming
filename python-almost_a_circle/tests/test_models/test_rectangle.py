@@ -45,6 +45,7 @@ class Test_Rectangle(unittest.TestCase):
         ValueError, "height must be > 0", Rectangle, 8, 0, 4, 2, 10)
 
         def test_display(self):
+            """ display """
             r1 = Rectangle(3, 2)
             expected_output = '###\n###\n'
             with StringIO() as buffer, redirect_stdout(buffer):
@@ -53,6 +54,7 @@ class Test_Rectangle(unittest.TestCase):
             self.assertEqual(result, expected_output)
 
         def test_update(self):
+            """ update """
             r = Rectangle(1, 2, 3, 4, 5)
             self.assertEqual(r.update().id, 5)
             self.assertEqual(r.update().width, 1)
@@ -61,5 +63,6 @@ class Test_Rectangle(unittest.TestCase):
             self.assertEqual(r.update().y, 4)
 
         def test_str(self):
+            """ str """
             r = Rectangle(14, 16, 12, 15, 25)
             self.assertEqual(str(r), "[Rectangle] (25) 12/15 - 14/16")
