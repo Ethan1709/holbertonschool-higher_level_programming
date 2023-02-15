@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ unittest """
 import unittest
+import os
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -93,3 +94,4 @@ class Test_Rectangle(unittest.TestCase):
             content = f.read()
         expected_output = '[{"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]'
         self.assertEqual(content, expected_output)
+        os.remove("Rectangle.json")
