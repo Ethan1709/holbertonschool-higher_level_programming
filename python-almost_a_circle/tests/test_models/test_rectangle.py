@@ -18,6 +18,10 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r.y, 2)
         self.assertEqual(r.area(), 48)
 
+        r  = Rectangle(8, 6)
+        self.assertEqual(r.width, 8)
+        self.assertEqual(r.height, 6)
+
         self.assertRaisesRegex(
         TypeError, "width must be an integer", Rectangle, "8", 6, 4, 2, 10)
         self.assertRaisesRegex(
