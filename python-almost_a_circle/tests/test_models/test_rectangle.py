@@ -85,3 +85,12 @@ class Test_Rectangle(unittest.TestCase):
         r = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
         answer = Rectangle(1, 2, 0, 0, 89)
         self.assertEqual(str(r), str(answer))
+
+        r = Rectangle.save_to_file(None)
+        self.assertEqual(r, None)
+
+        r = Rectangle.save_to_file([])
+        self.assertEqual(r, None)
+
+        r = Rectangle.save_to_file([Rectangle(1, 2)])
+        self.assertEqual(r, None)
