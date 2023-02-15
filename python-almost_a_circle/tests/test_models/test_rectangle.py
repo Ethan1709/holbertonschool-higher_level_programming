@@ -52,12 +52,12 @@ class Test_Rectangle(unittest.TestCase):
             result = buffer.getvalue()
         self.assertEqual(result, expected_output)
 
-        #r1 = Rectangle()
-        #expected_output = ''
-        #with StringIO() as buffer, redirect_stdout(buffer):
-         #   r1.display()
-         #  result = buffer.getvalue()
-        #self.assertEqual(result, expected_output)
+        r1 = Rectangle(3, 2, 1, 1)
+        expected_output = '\n ###\n ###\n'
+        with StringIO() as buffer, redirect_stdout(buffer):
+           r1.display()
+           result = buffer.getvalue()
+        self.assertEqual(result, expected_output)
 
         r = Rectangle(1, 2, 3, 4)
         r.update(89)
