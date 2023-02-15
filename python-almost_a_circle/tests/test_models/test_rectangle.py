@@ -10,6 +10,7 @@ from contextlib import redirect_stdout
 
 class Test_Rectangle(unittest.TestCase):
     """ unittest """
+
     def test_init(self):
         r = Rectangle(8, 6, 4, 2, 10)
         self.assertEqual(r.id, 10)
@@ -19,31 +20,31 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r.y, 2)
         self.assertEqual(r.area(), 48)
 
-        r  = Rectangle(8, 6)
+        r = Rectangle(8, 6)
         self.assertEqual(r.width, 8)
         self.assertEqual(r.height, 6)
 
         self.assertRaisesRegex(
-        TypeError, "width must be an integer", Rectangle, "8", 6, 4, 2, 10)
+            TypeError, "width must be an integer", Rectangle, "8", 6, 4, 2, 10)
         self.assertRaisesRegex(
-        TypeError, "height must be an integer", Rectangle, 8, "6", 4, 2, 10)
+            TypeError, "height must be an integer", Rectangle, 8, "6", 4, 2, 10)
         self.assertRaisesRegex(
-        TypeError, "x must be an integer", Rectangle, 8, 6, "4", 2, 10)
+            TypeError, "x must be an integer", Rectangle, 8, 6, "4", 2, 10)
         self.assertRaisesRegex(
-        TypeError, "y must be an integer", Rectangle, 8, 6, 4, "2", 10)
+            TypeError, "y must be an integer", Rectangle, 8, 6, 4, "2", 10)
         self.assertRaisesRegex(
-        ValueError, "width must be > 0", Rectangle, -1, 6, 4, 2, 10)
+            ValueError, "width must be > 0", Rectangle, -1, 6, 4, 2, 10)
         self.assertRaisesRegex(
-        ValueError, "height must be > 0", Rectangle, 8, -1, 4, 2, 10)
+            ValueError, "height must be > 0", Rectangle, 8, -1, 4, 2, 10)
         self.assertRaisesRegex(
-        ValueError, "x must be >= 0", Rectangle, 8, 6, -1, 2, 10)
+            ValueError, "x must be >= 0", Rectangle, 8, 6, -1, 2, 10)
         self.assertRaisesRegex(
-        ValueError, "y must be >= 0", Rectangle, 8, 6, 1, -2, 10)
+            ValueError, "y must be >= 0", Rectangle, 8, 6, 1, -2, 10)
         self.assertRaisesRegex(TypeError, "", Rectangle, )
         self.assertRaisesRegex(
-        ValueError, "width must be > 0", Rectangle, 0, 6, 4, 2, 10)
+            ValueError, "width must be > 0", Rectangle, 0, 6, 4, 2, 10)
         self.assertRaisesRegex(
-        ValueError, "height must be > 0", Rectangle, 8, 0, 4, 2, 10)
+            ValueError, "height must be > 0", Rectangle, 8, 0, 4, 2, 10)
 
         r1 = Rectangle(3, 2)
         expected_output = '###\n###\n'
@@ -55,8 +56,8 @@ class Test_Rectangle(unittest.TestCase):
         r1 = Rectangle(3, 2, 1, 1)
         expected_output = '\n ###\n ###\n'
         with StringIO() as buffer, redirect_stdout(buffer):
-           r1.display()
-           result = buffer.getvalue()
+            r1.display()
+            result = buffer.getvalue()
         self.assertEqual(result, expected_output)
 
         r = Rectangle(1, 2, 3, 4)
@@ -73,12 +74,12 @@ class Test_Rectangle(unittest.TestCase):
                                              'x': 6, 'y': 8})
 
         r = Rectangle.create(**{'id': 5, 'width': 1, 'height': 3,
-                                             'x': 4, 'y': 5})
+                                'x': 4, 'y': 5})
         answer = Rectangle(1, 3, 4, 5, 5)
         self.assertEqual(str(r), str(answer))
 
         r = Rectangle.create(**{'id': 89, 'width': 1,
-                                      'height': 2, 'x': 3})
+                                'height': 2, 'x': 3})
         answer = Rectangle(1, 2, 3, 0, 89)
         self.assertEqual(str(r), str(answer))
 
@@ -86,11 +87,9 @@ class Test_Rectangle(unittest.TestCase):
         answer = Rectangle(1, 2, 0, 0, 89)
         self.assertEqual(str(r), str(answer))
 
-        r = Rectangle.save_to_file(None)
-        self.assertEqual(r, None)
-
-        r = Rectangle.save_to_file([])
-        self.assertEqual(r, None)
-
-        r = Rectangle.save_to_file([Rectangle(1, 2)])
-        self.assertEqual(r, None)
+        r = Rectangle(2, 4)
+        Rectangle.save_to_file([r])
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
+        expected_output = '[{"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]'
+        self.assertEqual(content, expected_output)
