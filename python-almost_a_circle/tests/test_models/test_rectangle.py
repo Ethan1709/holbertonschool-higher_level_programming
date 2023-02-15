@@ -109,3 +109,17 @@ class Test_Rectangle(unittest.TestCase):
         expected_output = '[]'
         self.assertEqual(content, expected_output)
         os.remove("Rectangle.json")
+       
+        
+
+        r1 = Rectangle(10, 20)
+        Rectangle.save_to_file([r1])
+        rectangles = Rectangle.load_from_file()
+        self.assertIsInstance(rectangles[0], Rectangle)
+        self.assertEqual(rectangles[0].width, 10)
+        self.assertEqual(rectangles[0].height, 20)
+        os.remove("Rectangle.json")
+
+        r = Rectangle.load_from_file()
+        self.assertTrue(isinstance(r, list))
+        self.assertEqual(r, [])
