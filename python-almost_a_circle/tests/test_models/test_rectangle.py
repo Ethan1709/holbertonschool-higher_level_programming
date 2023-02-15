@@ -52,16 +52,11 @@ class Test_Rectangle(unittest.TestCase):
             result = buffer.getvalue()
         self.assertEqual(result, expected_output)
 
-        def test_update(self):
-            """ update """
-            r = Rectangle(1, 2, 3, 4, 5)
-            self.assertEqual(r.update().id, 5)
-            self.assertEqual(r.update().width, 1)
-            self.assertEqual(r.update().height, 2)
-            self.assertEqual(r.update().x, 3)
-            self.assertEqual(r.update().y, 4)
+        r = Rectangle(1, 2, 3, 4)
+        r.update(89)
+        self.assertEqual(r.id, 89)
+        r.update(89, 3)
+        self.assertEqual(r.width, 3)
 
-        def test_str(self):
-            """ str """
-            r = Rectangle(14, 16, 12, 15, 25)
-            self.assertEqual(str(r), "[Rectangle] (25) 12/15 - 14/16")
+        r = Rectangle(14, 16, 12, 15, 25)
+        self.assertEqual(str(r), "[Rectangle] (25) 12/15 - 14/16")
