@@ -2,5 +2,6 @@
 SELECT id, NAME
 FROM cities
 WHERE state_id in (
-    FROM states WHERE state.name = "California"
-);
+    FROM states WHERE states.name = "California"
+)
+ORDER BY cities.id DESC;
