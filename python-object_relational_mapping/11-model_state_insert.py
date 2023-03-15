@@ -15,8 +15,9 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    query = "INSERT INTO states (name) VALUES ('Louisania')"
-    r = engine.execute(query)
-
-    for row in r.fetchall():
-        print(f"states.id: {r.lastrowid}")
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    newState = State(name="Louisiana")
+    session.add(newState)
+    session.commit()
+    print(newState.id)
