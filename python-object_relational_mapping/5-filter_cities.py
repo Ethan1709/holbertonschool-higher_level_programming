@@ -23,9 +23,10 @@ if __name__ == "__main__":
     cursor.execute(request, (state_name_searched,))
 
     cityList = cursor.fetchall()
+    cl = [cityList]
+    cityNames = ', '.join([city[0] for city in cityList])
 
-    for city in cityList:
-        print(city)
+    print(cityNames.rstrip(', '))
 
     cursor.close()
     connection.close()
