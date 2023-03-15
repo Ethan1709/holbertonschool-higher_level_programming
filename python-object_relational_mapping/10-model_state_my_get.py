@@ -18,6 +18,7 @@ if __name__ == "__main__":
 
     r = engine.execute("SELECT states.id FROM states WHERE name = %s", (state_searched,))
     if r is not None:
-        print(f"{r}")
+        for row in r:
+            print(row[0])
     else:
         print("Not found")
