@@ -14,13 +14,14 @@ if __name__ == "__main__":
                                  port=3306)
 
     cursor = connection.cursor()
-    request = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id".format(state_name_searched)
+    request = "SELECT * FROM states WHERE name = '{}'\
+        ORDER BY states.id".format(state_name_searched)
     cursor.execute(request)
 
-    stateList = cursor.fetchall()
-
-    for state in stateList:
-        print(state)
+    stateList = cursor.fetchone()
+    while stateList is not None:
+        print(stateList)
+        stateList = cursor.fetchone()
 
     cursor.close()
     connection.close()
