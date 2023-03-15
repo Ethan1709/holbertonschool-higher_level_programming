@@ -15,6 +15,6 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    result = engine.execute(text("SELECT * FROM states WHERE name REGEXP 'a';"))
-    for row in result.fetchall():
+    r = engine.execute(text("SELECT * FROM states WHERE name REGEXP 'a';"))
+    for row in r.fetchall():
         print("{}: {}".format(row[0], row[1]))
