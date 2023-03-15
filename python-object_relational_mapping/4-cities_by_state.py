@@ -14,7 +14,8 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     request = "SELECT cities.id, cities.name, states.name\
-        FROM cities, states ORDER BY cities.id"
+        FROM cities, states WHERE cities.state_id = states.id\
+        ORDER BY cities.id"
     cursor.execute(request)
 
     cityList = cursor.fetchall()
