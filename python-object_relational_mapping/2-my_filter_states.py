@@ -18,9 +18,10 @@ if __name__ == "__main__":
         ORDER BY states.id".format(state_name_searched)
     cursor.execute(request)
 
-    state = cursor.fetchone()
-    if state is not None:
-        print(state)
+    state = cursor.fetchall()
+    if state:
+        for s in state:
+            print(s)
 
     cursor.close()
     connection.close()
