@@ -14,17 +14,13 @@ if __name__ == "__main__":
                                  port=3306)
 
     cursor = connection.cursor()
-    request = "SELECT COUNT(*) FROM states WHERE name = '{}'\
+    request = "SELECT * FROM states WHERE name = '{}'\
         ORDER BY states.id".format(state_name_searched)
     cursor.execute(request)
 
-    count = cursor.fetchone()[0]
-    if count > 0:
-        request = "SELECT * FROM states WHERE name = '{}'\
-        ORDER BY states.id".format(state_name_searched)
-        cursor.execute(request)
-        state = cursor.fetchone()
-        print(state)
+    results = cursor.fetchall()
+    for row in results:
+        print(row)
 
     cursor.close()
     connection.close()
