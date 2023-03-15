@@ -19,3 +19,5 @@ if __name__ == "__main__":
     row = result.fetchone()
     if row is not None:
         print("{}: {}".format(row[0], row[1]))
+    else:
+        print("Nothing")
