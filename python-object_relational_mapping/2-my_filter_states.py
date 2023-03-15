@@ -23,7 +23,7 @@ if __name__ == "__main__":
         request = "SELECT * FROM states WHERE name = '{}'\
         ORDER BY states.id".format(state_name_searched)
         cursor.execute(request)
-        state = cursor.fetchall()
+        state = cursor.fetchone()
         print(state)
 
     cursor.close()
