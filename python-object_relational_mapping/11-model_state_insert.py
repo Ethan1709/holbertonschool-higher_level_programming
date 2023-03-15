@@ -19,4 +19,4 @@ if __name__ == "__main__":
     r = engine.execute(query)
 
     for row in r.fetchall():
-        print(f"{row[0]}")
+        print(f"states.id: {r.lastrowid}")
