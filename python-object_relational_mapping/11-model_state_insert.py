@@ -15,9 +15,8 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    query = "INSERT INTO states (name) VALUES ('Louisania')"\
-        + "SELECT * FROM states"
+    query = "INSERT INTO states (name) VALUES ('Louisania')"
     r = engine.execute(query)
 
     for row in r.fetchall():
-        print(f"{row[0]: {row[1]}}")
+        print(f"{row[0]}")
