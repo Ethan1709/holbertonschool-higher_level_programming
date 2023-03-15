@@ -17,5 +17,8 @@ if __name__ == "__main__":
                            format(username, password, database))
 
     r = engine.execute("SELECT states.id FROM states WHERE name = %s", (state_searched,))
-    for row in r:
-        print(row[0])
+    if r:
+        for row in r:
+            print(row[0])
+    else:
+        print("Not found")
