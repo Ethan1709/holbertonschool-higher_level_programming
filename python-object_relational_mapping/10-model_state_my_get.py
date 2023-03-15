@@ -17,7 +17,7 @@ if __name__ == "__main__":
                            format(username, password, database))
 
     r = engine.execute("SELECT states.id FROM states WHERE name = %s", (state_searched,))
-    if r.rowcount > 1:
+    if r.rowcount > 0:
         for row in r:
             print(row[0])
     else:
