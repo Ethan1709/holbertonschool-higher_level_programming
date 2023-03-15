@@ -16,7 +16,9 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    r = engine.execute("SELECT states.id FROM states WHERE name = %s", (state_searched,))
+    query = "SELECT states.id FROM states WHERE name = %s"
+    s = (state_searched,)
+    r = engine.execute(query, s)
     if r.rowcount > 0:
         for row in r:
             print(row[0])
