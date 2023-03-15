@@ -14,8 +14,8 @@ if __name__ == "__main__":
                                  port=3306)
 
     cursor = connection.cursor()
-    request = "SELECT * FROM states WHERE name = %s ORDER BY states.id"
-    cursor.execute(request, (state_name_searched,))
+    request = "SELECT * FROM states WHERE name = '{}' ORDER BY states.id".format(state_name_searched)
+    cursor.execute(request)
 
     stateList = cursor.fetchall()
 
