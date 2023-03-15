@@ -15,7 +15,7 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    query = "SELECT * FROM State ALTER TABLE State ADD Louisania"
+    query = "SELECT * FROM states ALTER TABLE states ADD Louisania"
     r = engine.execute(query)
 
     for row in r.fetchall():
