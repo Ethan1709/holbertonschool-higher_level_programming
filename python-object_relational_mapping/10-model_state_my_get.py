@@ -19,4 +19,4 @@ if __name__ == "__main__":
     r = engine.execute
     (text("SELECT states.id FROM states WHERE name = :state_name_searched;"))
     for row in r.fetchall():
-        print(row)
+        print(row[0])
