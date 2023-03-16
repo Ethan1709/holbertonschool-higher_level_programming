@@ -18,4 +18,3 @@ if __name__ == "__main__":
     n = 'New Mexico'
 
     r = engine.execute(text("UPDATE states SET name = 'n' WHERE id = 2;"))
-
