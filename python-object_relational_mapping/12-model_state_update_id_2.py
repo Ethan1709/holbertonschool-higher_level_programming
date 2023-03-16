@@ -15,5 +15,7 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    r = engine.execute(text("UPDATE states SET name = 'New Mexico' WHERE id = 2;"))
+    n = 'New Mexico'
+
+    r = engine.execute(text("UPDATE states SET name = 'n' WHERE id = 2;"))
 
