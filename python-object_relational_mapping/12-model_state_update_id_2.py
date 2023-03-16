@@ -17,8 +17,6 @@ if __name__ == "__main__":
 
     n = 'New Mexico'
 
-    r = engine.execute(text("UPDATE states SET name = 'n' WHERE id = 2;"))
-
     Session = sessionmaker(bind=engine)
     session = Session()
     update = session.query(State).filter(State.id == 2).first()
