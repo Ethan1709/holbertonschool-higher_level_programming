@@ -3,7 +3,7 @@
 
 from model_state import Base, State
 import sys
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
@@ -15,6 +15,9 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    r = engine.execute(text("SELECT * FROM states WHERE name REGEXP 'a';"))
-    for row in r.fetchall():
-        print("{}: {}".format(row[0], row[1]))
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    for state in session.query(State).filter(State.name.contains('a')).all():
+        print("{}: {}".format(state.id, state.name))
+    session.close()
