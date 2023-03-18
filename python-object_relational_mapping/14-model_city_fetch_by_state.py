@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""list all City objects"""
+""" list all City objects"""
 
 from model_state import Base, State
 from model_city import Base, City
