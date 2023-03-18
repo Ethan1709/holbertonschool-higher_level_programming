@@ -15,8 +15,6 @@ if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(username, password, database))
 
-    n = 'New Mexico'
-
     Session = sessionmaker(bind=engine)
     session = Session()
     update = session.query(State).filter(State.id == 2).first()
