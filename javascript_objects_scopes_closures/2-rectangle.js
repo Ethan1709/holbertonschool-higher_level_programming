@@ -2,7 +2,7 @@
 
 class Rectangle {
   constructor (w, h) {
-    if (h <= 0 || w <= 0 || h == null) {
+    if (h <= 0 || w <= 0 || h == null || w == null) {
       return;
     }
     this.width = w;
