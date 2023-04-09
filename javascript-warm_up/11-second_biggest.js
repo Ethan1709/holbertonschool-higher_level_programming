@@ -6,13 +6,13 @@ if (argslen === 0 || argslen === 1) {
   console.log('0');
 } else {
   for (let i = 0; i < argslen - 1; i++) {
-    for (let j = 0; j < argslen - i - 1; j ++) {
-        if (args[j] > args[j + 1]) {
-            let x = args[j];
-            args[j] = args[j + 1];
-            args[j + 1] = x;
-        }
+    for (let j = 0; j < argslen - i - 1; j++) {
+      if (args[j] > args[j + 1]) {
+        const x = args[j];
+        args[j] = args[j + 1];
+        args[j + 1] = x;
+      }
     }
-}
+  }
 console.log(args[argslen - 2]);
 }
