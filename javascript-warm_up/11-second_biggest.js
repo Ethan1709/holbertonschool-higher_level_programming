@@ -1,12 +1,12 @@
 #!/usr/bin/node
 
 const args = process.argv.slice(2).map(str => parseInt(str, 10));
-const args_len = args.length;
-if (args_len === 0 || args_len === 1) {
+const argslen = args.length;
+if (argslen === 0 || argslen === 1) {
   console.log('0');
 } else {
-  for (let i = 0; i < args_len - 1; i++) {
-    for (let j = 0; j < args_len - i - 1; j ++) {
+  for (let i = 0; i < argslen - 1; i++) {
+    for (let j = 0; j < argslen - i - 1; j ++) {
         if (args[j] > args[j + 1]) {
             let x = args[j];
             args[j] = args[j + 1];
@@ -14,5 +14,5 @@ if (args_len === 0 || args_len === 1) {
         }
     }
 }
-console.log(args[args_len - 2]);
+console.log(args[argslen - 2]);
 }
