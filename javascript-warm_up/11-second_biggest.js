@@ -14,5 +14,5 @@ if (argslen === 0 || argslen === 1) {
       }
     }
   }
-console.log(args[argslen - 2]);
+  console.log(args[argslen - 2]);
 }
