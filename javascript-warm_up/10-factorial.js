@@ -12,5 +12,5 @@ if (number >= 0) {
   const r = fact(number);
   console.log(r);
 } else {
-  console.log('1')
+  console.log('1');
 }
