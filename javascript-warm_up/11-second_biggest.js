@@ -14,5 +14,5 @@ if (args_len === 0 || args_len === 1) {
         }
     }
 }
-console.log([args_len - 2]);
+console.log(args[args_len - 2]);
 }
