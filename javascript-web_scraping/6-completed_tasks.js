@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 const request = require('request');
+let c = 1;
 const dict = {};
 let k = 0;
-let c = 1;
 let o = 1;
 let t = 0;
 const apiurl = String(process.argv[2]);
@@ -17,7 +17,7 @@ request({
   } for (const i in body) {
     k = body[i].userId;
     if (k !== o && t !== 0) {
-      dict[k] = t;
+      dict[c] = t;
       t = 0;
       c += 1;
       o = k;
@@ -29,7 +29,7 @@ request({
     }
   }
   if (t !== 0) {
-    dict[k] = t;
+    dict[c] = t;
   }
   console.log(dict);
 });
