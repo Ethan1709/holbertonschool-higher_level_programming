@@ -2,9 +2,10 @@
 
 const request = require('request');
 let count = 0;
+const url = String(process.argv[2])
 
 request({
-  url: 'https://swapi-api.hbtn.io/api/films/',
+  url: url,
   json: true
 }, (err, response, body) => {
   if (err) {
