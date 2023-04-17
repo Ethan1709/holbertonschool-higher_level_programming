@@ -5,9 +5,10 @@ let c = 1;
 const dict = {};
 let k = 0;
 let t = 0;
+api_url = String(process.argv[2]);
 
 request({
-  url: 'https://jsonplaceholder.typicode.com/todos',
+  url: api_url,
   json: true
 }, (err, response, body) => {
   if (err) {
