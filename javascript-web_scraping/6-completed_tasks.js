@@ -16,7 +16,7 @@ request({
     console.log('Error:', err);
   } for (const i in body) {
     k = body[i].userId;
-    if (k != o) {
+    if (k != o && t != 0) {
       dict[c] = t;
       t = 0;
       c += 1;
