@@ -29,7 +29,9 @@ request({
     }
     // console.log(body[i].completed)
   }
+  if (t != 0) {
   dict[c] = t;
+  }
   console.log(dict);
   // console.log(body);
 });
