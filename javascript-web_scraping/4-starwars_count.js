@@ -12,7 +12,7 @@ request({
     console.log('Error:', err);
   } for (const i in body.results) {
     for (const j of body.results[i].characters) {
-      if (j == 'https://swapi-api.hbtn.io/api/people/18/') {
+      if (j === 'https://swapi-api.hbtn.io/api/people/18/') {
         count += 1;
       }
     }
