@@ -12,12 +12,12 @@ request({
   if (err) {
     console.log('Error:', err);
   } for (const i in body.results) {
-    for (const j of body.results[i].characters) {
-      if (j === `https://swapi-api.hbtn.io/api/people/${characterId}/`) {
-        count += 1;
+      for (const j of body.results[i].characters) {
+        if (j === `https://swapi-api.hbtn.io/api/people/${characterId}/`) {
+          count += 1;
+        }
       }
     }
+    console.log(count);
   }
-  console.log(count);
-}
 );
