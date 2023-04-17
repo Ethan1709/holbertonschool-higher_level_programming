@@ -4,32 +4,32 @@ const request = require('request');
 let c = 1;
 const dict = {};
 let k = 0;
+let o = 1;
 let t = 0;
-api_url = String(process.argv[2]);
+apiurl = String(process.argv[2]);
 
 request({
-  url: api_url,
+  url: apiurl,
   json: true
 }, (err, response, body) => {
   if (err) {
     console.log('Error:', err);
   } for (const i in body) {
-    k += 1;
-    if (k % 20 === 0) {
-      if (body[i].completed === true) {
-        t += 1;
-      }
+    k = body[i].userId;
+    if (k != o) {
       dict[c] = t;
       t = 0;
       c += 1;
+      o = k;
     }
-    if (body[i].userId === c) {
+    if (k === c) {
       if (body[i].completed === true) {
         t += 1;
       }
     }
     // console.log(body[i].completed)
   }
+  dict[c] = t;
   console.log(dict);
   // console.log(body);
 });
