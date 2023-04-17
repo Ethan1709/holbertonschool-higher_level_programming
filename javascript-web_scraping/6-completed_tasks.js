@@ -3,6 +3,7 @@
 const request = require('request');
 const dict = {};
 let k = 0;
+let c = 1;
 let o = 1;
 let t = 0;
 const apiurl = String(process.argv[2]);
@@ -18,6 +19,7 @@ request({
     if (k !== o && t !== 0) {
       dict[k] = t;
       t = 0;
+      c += 1;
       o = k;
     }
     if (k === c) {
