@@ -2,7 +2,7 @@
 
 const request = require('request');
 let count = 0;
-const url = String(process.argv[2])
+const url = String(process.argv[2]);
 
 request({
   url: url,
