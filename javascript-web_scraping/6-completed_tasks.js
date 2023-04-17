@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const request = require('request');
-let c = 1;
 const dict = {};
 let k = 0;
 let o = 1;
@@ -17,9 +16,8 @@ request({
   } for (const i in body) {
     k = body[i].userId;
     if (k !== o && t !== 0) {
-      dict[c] = t;
+      dict[k] = t;
       t = 0;
-      c += 1;
       o = k;
     }
     if (k === c) {
@@ -29,7 +27,7 @@ request({
     }
   }
   if (t !== 0) {
-    dict[c] = t;
+    dict[k] = t;
   }
   console.log(dict);
 });
