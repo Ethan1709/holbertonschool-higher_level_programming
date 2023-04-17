@@ -6,7 +6,7 @@ const dict = {};
 let k = 0;
 let o = 1;
 let t = 0;
-apiurl = String(process.argv[2]);
+const apiurl = String(process.argv[2]);
 
 request({
   url: apiurl,
@@ -16,7 +16,7 @@ request({
     console.log('Error:', err);
   } for (const i in body) {
     k = body[i].userId;
-    if (k != o && t != 0) {
+    if (k !== o && t !== 0) {
       dict[c] = t;
       t = 0;
       c += 1;
@@ -27,14 +27,9 @@ request({
         t += 1;
       }
     }
-    // console.log(body[i].completed)
   }
-  if (t != 0) {
-  dict[c] = t;
+  if (t !== 0) {
+    dict[c] = t;
   }
   console.log(dict);
-  // console.log(body);
 });
-
-// body[i].userId = avoir l'userId
-// je dois filtrer les true dans body[i[j]]
