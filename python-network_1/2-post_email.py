@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 from urllib.request import urlopen
-from urllib.parse import urlencode
 from sys import argv
 
 
