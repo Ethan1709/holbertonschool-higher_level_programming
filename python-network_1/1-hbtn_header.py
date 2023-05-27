@@ -2,7 +2,7 @@
 from urllib.request import urlopen
 from sys import argv
 
-with urlopen(str(argv[1])) as response:
+with urlopen(argv[1]) as response:
     headers = response.getheaders()
 for i  in headers:
     if i[0] == 'X-Request-Id':
