@@ -10,9 +10,12 @@ try:
     r = requests.get('https://api.github.com/repos/rails/rails/commits', auth=(repo, owner_name))
     repo_data = r.json()
     for i in repo_data:
-        sha_val = (i.get('sha'))
-        j = (i.get('commit'))
-        l = (j['author'])
-        print(str(sha_val) + ': ' + str(l.get('name')))
+            if count == 10:
+                 exit(1)
+            sha_val = (i.get('sha'))
+            j = (i.get('commit'))
+            l = (j['author'])
+            print(str(sha_val) + ': ' + str(l.get('name')))
+            count += 1
 except requests.exceptions.RequestException:
     exit(1)
