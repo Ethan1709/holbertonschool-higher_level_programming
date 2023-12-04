@@ -3,7 +3,5 @@ from urllib.request import urlopen
 from sys import argv
 
 with urlopen(argv[1]) as response:
-    headers = response.getheaders()
-for i in headers:
-    if i[0] == 'X-Request-Id':
-        print(i[1])
+    x_request_id = response.headers.get('X-Request-Id')
+print (x_request_id)
