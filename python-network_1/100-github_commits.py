@@ -13,8 +13,8 @@ if __name__ == "__main__":
     repo_data = r.json()
     try:
         for i in range(10):
-            print("{}: {}".format(
-                repo_data[i].get("sha"),
-                repo_data[i].get("commit").get("author").get("name")))
+            commit_sha = repo_data[i].get("sha")
+            author = repo_data[i].get("commit").get("author").get("name")
+            print(f'{commit_sha}: {author}')
     except IndexError:
         pass
