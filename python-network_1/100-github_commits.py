@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Comments"""
 
 import requests
@@ -12,9 +12,9 @@ if __name__ == "__main__":
     r = requests.get(url)
     repo_data = r.json()
     try:
-        for i in repo_data:
-            commit_sha = str(i.get("sha"))
-            author = str(i.get("commit").get("author").get("name"))
-            print(f'{commit_sha}: {author}')
+        for i in range(10):
+            print("{}: {}".format(
+                repo_data[i].get("sha"),
+                repo_data[i].get("commit").get("author").get("name")))
     except IndexError:
         pass
