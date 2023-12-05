@@ -16,5 +16,7 @@ if __name__ == "__main__":
             commit_sha = repo_data[i].get("sha")
             author = repo_data[i].get("commit").get("author").get("name")
             print(f'{commit_sha}: {author}')
-    except:
+    except IndexError:
+        pass
+    except KeyError:
         pass
