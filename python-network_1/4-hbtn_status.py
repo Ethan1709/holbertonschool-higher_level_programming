@@ -1,4 +1,6 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""Comments"""
+
 import requests
 
 r = requests.get('https://intranet.hbtn.io/status')
