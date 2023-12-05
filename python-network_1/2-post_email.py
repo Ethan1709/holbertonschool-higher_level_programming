@@ -2,13 +2,15 @@
 """Python script that takes in a URL"""
 
 from urllib.request import urlopen
+from urllib import request, parse
 from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
     email = argv[2]
-    data = {'email': email}
+    value = {'email': email}
+    data = parse.urlencode(value).encode()
 
-    with urlopen(url) as response:
-        r = response.read().decode('utf-8')
-    print('Your email is: ' + r)
+    req =  request.Request(url, data)
+    with urlopen(req) as r:
+        print(r.decode('utf-8'))
