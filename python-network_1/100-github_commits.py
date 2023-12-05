@@ -1,21 +1,17 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""Comments"""
+
 import requests
-from sys import argv, exit
+from sys import argv
 
-repo = argv[1]
-owner_name = argv[2]
-count = 0
+if __name__ == "__main__":
+    rails1 = argv[1]
+    rails2 = argv[2]
+    url = f'https://api.github.com/repos/{rails1}/{rails2}/commits'
 
-try:
-    r = requests.get('https://api.github.com/repos/rails/rails/commits', auth=(repo, owner_name))
+    r = requests.get(url)
     repo_data = r.json()
-    for i in repo_data:
-            if count == 10:
-                 exit(1)
-            sha_val = (i.get('sha'))
-            j = (i.get('commit'))
-            l = (j['author'])
-            print(str(sha_val) + ': ' + str(l.get('name')))
-            count += 1
-except requests.exceptions.RequestException:
-    exit(1)
+    for i in range (0, 10):
+        commit_sha = repo_data[i].get("sha")
+        author = repo_data[i].get("commit").get("author").get("name")
+        print(f'{commit_sha}: {author}')
