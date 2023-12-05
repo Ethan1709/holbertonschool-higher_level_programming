@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Comments"""
+
 import requests
 from sys import argv
 
